@@ -68,7 +68,7 @@ function Carousel() {
   }, [currentIndex, isHovered]);
 
   return (
-    <div className='max-w-[1400px] h-[650px] w-full m-auto py-10 px-4 relative group mt-16'>
+    <div className=' h-[610px]  w-full m-auto  relative group mt-20'>
       <div 
         className='relative w-full h-full'
         onMouseEnter={() => setIsHovered(true)}
