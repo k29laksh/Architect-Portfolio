@@ -15,7 +15,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="flex md:flex-row mt-20">
+      <div className="flex md:flex-row mt-20 ">
         <div className="hidden sm:block p-3 mt-2 mb-2 fixed ">
           <h2 className="text-center py-2 border text-gray-300 rounded-full mb-2">
             Filter by Categories
@@ -50,14 +50,14 @@ const Products = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <figure className="rounded-md">
+              <figure className="rounded">
                 <img
                   src="https://img.freepik.com/premium-photo/geometric-facades-residential-building_294094-27.jpg"
                   alt="Shoes"
-                  className="rounded-md"
+                  className="rounded"
                 />
                 {hoveredIndex === index && (
-                  <div className="overlay rounded-md px-6 absolute inset-0 flex items-center justify-center bg-black overflow-hidden bg-opacity-60 text-white text-center">
+                  <div className="overlay rounded px-6 absolute inset-0 flex items-center justify-center bg-black overflow-hidden bg-opacity-60 text-white text-center">
                     <div className="">
                       <h2 className="text-2xl font-bold mb-2 text-gray-200">Industrial Building</h2>
                       <p className="mb-4 text-xl font-semibold text-gray-200">

@@ -6,13 +6,13 @@ const Navbar = () => {
   const [clickSearch, setClickSearch]= useState(false)
 
   return (
-    <div className="navbar bg-base-100 fixed h-20 z-50">
-      <div className="navbar-start ">
+    <div className="navbar bg-base-100 fixed h-20 z-50 text-zinc-800">
+      <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 text-base rounded-box w-52 ">
+          <ul tabIndex={0} className="menu  menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 text-base rounded-box w-52 text-zinc-800">
             <li className=''><Link to="/">Home</Link></li>
             <li><Link to="/allprojects">All Projects</Link></li>
             <li>

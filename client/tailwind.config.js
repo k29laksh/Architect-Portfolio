@@ -13,7 +13,8 @@ export default {
 
   ],
   daisyui: {
-    themes: ["light", "dark", "cupcake"], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+    themes: ["light", "dark", "cupcake","business"],
+    darkTheme: "business", // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
    
   },
 }

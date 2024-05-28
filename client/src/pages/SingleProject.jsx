@@ -83,7 +83,7 @@ function SingleProject() {
   return (
     <div className="flex flex-wrap justify-center gap-4 sm:justify-around ">
       <div className="flex flex-col sm:flex-row">
-        <div className=" h-[350px] sm:h-[450px] w-[400px] sm:w-[450px] px-4 sm:ml-10 relative group mt-24">
+        <div className=" h-[350px] sm:h-[500px] w-[400px] sm:w-[550px] px-4 sm:ml-10 relative group mt-24">
           <div
             className="relative w-full h-full"
             onMouseEnter={() => setIsHovered(true)}
@@ -116,7 +116,8 @@ function SingleProject() {
         </div>
 
         {/* multiple images */}
-        <div className="mt-24 ">
+        <div className="mt-24 relative ">
+          <div className="flex flex-col">
           <div className="flex flex-wrap gap-3 w-[400px]">
             {slides.map((img, index) => (
               <div
@@ -131,6 +132,12 @@ function SingleProject() {
                 />
               </div>
             ))}
+          </div>
+
+          {/* date */}
+<div className="absolute bottom-0">
+  29 june 2020
+</div>
           </div>
         </div>
       </div>
@@ -184,11 +191,11 @@ function SingleProject() {
 
       {/* contact div */}
       <div className="py-4 ">
-      <p className=" font-semibold text-red-500 ">
+      <p className=" font-semibold text-blue-500 ">
       ARE YOU LOOKING FOR A NEW PROJECT?
       </p>
 
-      <button className="btn  btn-error text-white mt-4">Contact Us</button>
+      <button className="btn  btn-primary rounded-md text-white mt-4">Contact Us</button>
 
 
       </div>
