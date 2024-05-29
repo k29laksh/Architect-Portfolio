@@ -6,7 +6,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <main className="py-3">
+      <main className="">
         <Outlet />
       </main>
     </>

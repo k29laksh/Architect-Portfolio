@@ -11,12 +11,18 @@ import {
 import Projects from "./pages/Projects.jsx";
 import Home from "./pages/Home.jsx";
 import SingleProject from "./pages/SingleProject.jsx";
+import LoginPage from "./pages/auth/Login.jsx";
+import Dashboard from "./pages/auth/Dashboard.jsx";
 
 
 // Create the router
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
+
+      
+      <Route path="/admin" element={<LoginPage/>}/>
+      <Route path="/admindashboard" element={<Dashboard/>}/>
      
 
 

@@ -68,7 +68,7 @@ function Carousel() {
   }, [currentIndex, isHovered]);
 
   return (
-    <div className=' h-[610px]  w-full m-auto  relative group mt-20'>
+    <div className=' h-[400px] sm:h-[350px] w-full sm:w-[520px] xl:w-[600px] m-auto  relative group '>
       <div 
         className='relative w-full h-full'
         onMouseEnter={() => setIsHovered(true)}
@@ -76,21 +76,20 @@ function Carousel() {
       >
         <div
           style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-          className='w-full h-full rounded-md bg-center bg-cover duration-500 opacity-30 absolute top-0 left-0'
+          className='w-full h-full rounded lg:rounded-md bg-center bg-cover duration-500  absolute top-0 left-0'
         ></div>
-        <div className='absolute top-0 left-0 w-full h-full flex flex-col justify-between items-center md:items-start p-4 text-center sm:text-start sm:p-10 text-white'>
-          <h2 className='text-6xl -tracking-tighter'>{slides[currentIndex].name}</h2>
-          <a href={slides[currentIndex].readMoreLink} className=' bg-transparent border mt-2 w-32 text-center inline-block hover:opacity-80 text-white px-4 py-3 rounded'>
-            Read More
+        <div className='absolute bottom-0 left-0 w-full h-full flex flex-col justify-end items-center md:items-end md:justify-end p-4 text-center sm:text-start sm:p-10 text-white'>
+          <a href={slides[currentIndex].readMoreLink} className=" bg-black/40 border-2 z-20 shadow-lg  font-semibold px-5 py-3 rounded-md hover:scale-105 hover:ease-out duration-75">
+            View Project
           </a>
         </div>
       </div>
       {/* Left Arrow */}
-      <div className='lg:hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+      <div className='lg:hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer'>
         <BsChevronCompactLeft onClick={prevSlide} size={30} />
       </div>
       {/* Right Arrow */}
-      <div className='lg:hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+      <div className='lg:hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer'>
         <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
       <div className='flex top-4 justify-center py-2'>

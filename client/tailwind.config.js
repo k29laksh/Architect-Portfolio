@@ -5,16 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(90deg, #764fe3 0%, #7592ee 100%)',
+      },
+    },
+    fontFamily: {
+      'text': ["Manrope", 'sans-serif'],
+      'heading': ["Lexend", 'sans-serif'],
+    }
   },
   plugins: [
-    require('daisyui'),
     require('tailwind-scrollbar'),
 
   ],
-  daisyui: {
-    themes: ["light", "dark", "cupcake","business"],
-    darkTheme: "business", // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
-   
-  },
+  
 }
