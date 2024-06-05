@@ -5,28 +5,28 @@ import { RxDotFilled } from 'react-icons/rx';
 function Carousel() {
   const slides = [
     {
-      url: 'https://i.pinimg.com/736x/fc/43/17/fc4317e44c842b3f3f1f922d9fba9b96.jpg',
+      url: 'https://media.architecturaldigest.com/photos/5d3f6c8084a5790008e99f37/master/w_1600%2Cc_limit/GettyImages-1143278588.jpg',
       name: 'Beautiful Scenery',
       location:'Jaipur, Rajasthan',
       readMoreLink: '#'
     },
     {
-      url: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+      url: 'https://housing.com/news/wp-content/uploads/2022/11/ground-floor-house-design-compressed.jpg',
       name: 'Mountain Adventure',
       readMoreLink: '#'
     },
     {
-      url: 'https://images.unsplash.com/photo-1661961112951-f2bfd1f253ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80',
+      url: 'https://www.hlx.co.in/images/slide5.jpg',
       name: 'City Lights',
       readMoreLink: '#'
     },
     {
-      url: 'https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2253&q=80',
+      url: 'https://www.weddingsbyneerajkamra.com/wedding-venue/jaipur/chomu-palace/images/slide2.jpg',
       name: 'Desert Safari',
       readMoreLink: '#'
     },
     {
-      url: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',
+      url: 'https://www.zricks.com/img/UpdatesBlog/30de4052-3001-49bd-89a6-6d1c81ff8f21Weekend%20Homes%20or%20Vacation%20Homes-compressed.jpg',
       name: 'Beach Vibes',
       readMoreLink: '#'
     },
@@ -68,7 +68,7 @@ function Carousel() {
   }, [currentIndex, isHovered]);
 
   return (
-    <div className=' h-[400px] sm:h-[350px] w-full sm:w-[520px] xl:w-[600px] m-auto  relative group '>
+    <div className=' h-[400px] sm:h-[450px] w-full sm:w-[600px] xl:w-[700px] m-auto  relative group '>
       <div 
         className='relative w-full h-full'
         onMouseEnter={() => setIsHovered(true)}
@@ -76,7 +76,7 @@ function Carousel() {
       >
         <div
           style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-          className='w-full h-full rounded lg:rounded-md bg-center bg-cover duration-500  absolute top-0 left-0'
+          className='w-full h-full rounded lg:rounded-none lg:rounded-bl-[3rem] bg-center bg-cover duration-500  absolute top-0 left-0'
         ></div>
         <div className='absolute bottom-0 left-0 w-full h-full flex flex-col justify-end items-center md:items-end md:justify-end p-4 text-center sm:text-start sm:p-10 text-white'>
           <a href={slides[currentIndex].readMoreLink} className=" bg-black/40 border-2 z-20 shadow-lg  font-semibold px-5 py-3 rounded-md hover:scale-105 hover:ease-out duration-75">

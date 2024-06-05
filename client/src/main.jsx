@@ -11,18 +11,19 @@ import {
 import Projects from "./pages/Projects.jsx";
 import Home from "./pages/Home.jsx";
 import SingleProject from "./pages/SingleProject.jsx";
-import LoginPage from "./pages/auth/Login.jsx";
-import Dashboard from "./pages/auth/Dashboard.jsx";
-
-
-// Create the router
+import LoginPage from "./pages/admin/auth/Login.jsx";
+import ManageCategory from "./pages/admin/category/ManageCategory.jsx";
+import ManageProject from "./pages/admin/project/ManageProject.jsx";
+import { Provider } from 'react-redux'
+import store from "./redux/store.js";// Create the router
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
 
       
       <Route path="/admin" element={<LoginPage/>}/>
-      <Route path="/admindashboard" element={<Dashboard/>}/>
+      <Route path="/managecategory" element={<ManageCategory/>}/>
+      <Route path="/manageprojects" element={<ManageProject/>}/>
      
 
 
@@ -38,6 +39,8 @@ const router = createBrowserRouter(
 
 // Render the application
 createRoot(document.getElementById("root")).render(
-      <RouterProvider router={router} />
- 
+<Provider store={store}>
+<RouterProvider router={router} />
+
+</Provider> 
 );

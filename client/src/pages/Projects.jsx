@@ -1,13 +1,8 @@
 import { useState } from "react";
+import SidebarFilter from "../components/SidebarFilter";
 
 const Products = () => {
-  const categories = [
-    { name: "Hospitals" },
-    { name: "Home" },
-    { name: "Hotels" },
-    { name: "Industrial" },
-    { name: "Schools" },
-  ];
+ 
 
   const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -15,8 +10,9 @@ const Products = () => {
 
   return (
     <>
-      <div className="flex md:flex-row mt-20 ">
-        <div className="hidden sm:block p-3 mt-2 mb-2 fixed ">
+      <div className="flex">
+        <SidebarFilter/>
+        {/* <div className="hidden sm:block p-3 mt-2 mb-2 fixed ">
           <h2 className="text-center py-2 border text-gray-300 rounded-full mb-2">
             Filter by Categories
           </h2>
@@ -40,9 +36,9 @@ const Products = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="productContainer flex flex-wrap justify-center md:justify-start gap-8 sm:ml-[260px] sm:w-[calc(100vw - 52px)]">
+        <div className="projectContainer  flex flex-wrap justify-center md:justify-start gap-8 p-4">
           {products.map((product, index) => (
             <div
               key={index}

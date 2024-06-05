@@ -1,79 +1,94 @@
-// src/App.js
-import React from 'react';
+import React, { useState } from "react";
+import { LuBookmark } from "react-icons/lu";
+import { FaRegHeart } from "react-icons/fa";
+import { MdGroups } from "react-icons/md";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const SidebarFilter = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const categories = [
+    { name: "Hospitals" },
+    { name: "Home" },
+    { name: "Hotels" },
+    { name: "Industrial" },
+    { name: "Schools" },
+    { name: "Hospitals" },
+    { name: "Home" },
+    { name: "Hotels" },
+    { name: "Industrial" },
+    { name: "Schools" },
+    { name: "Hospitals" },
+    { name: "Home" },
+    { name: "Hotels" },
+    { name: "Industrial" },
+    { name: "Schools" },
+  ];
+
   return (
-    <div className="flex absolute top-0 left-0 z-50 h-screen ">
-      {/* Sidebar */}
-      <div className="w-64 bg-white h-screen shadow-md">
-        {/* Header */}
-        <div className="p-4 border-b">
-          <div className="flex items-center">
-            <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
-              <span className="text-xl font-bold text-white">R</span>
-            </div>
-            <span className="ml-4 text-lg font-semibold">Robin Hood's Team</span>
+    <div className="relative md:sticky md:top-0 md:h-screen z-50 md:z-0  ">
+      <div
+        className={`fixed md:relative top-0 left-0 h-screen w-64 bg-white shadow-md transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } md:transform-none transition-transform duration-300`}
+      >
+        <div className="p-4 border-b  mt-14 md:mt-0">
+          <div className="flex-col flex space-y-4">
+            <input
+              type="text"
+              placeholder="Search"
+              className="border w-full border-gray-500 h-10 rounded-md outline-none px-2 text-zinc-700"
+            />
+            <button className="text-gray-500 border-gray-500 border hover:scale-105 hover:ease-out duration-75 px-4 py-2 rounded-md font-medium">
+              Search
+            </button>
           </div>
         </div>
-        {/* Menu */}
         <nav className="mt-4">
           <ul>
-            <li>
-              <a href="#" className="flex items-center p-4 text-gray-700 hover:bg-gray-100 hover:text-purple-600">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4z" />
-                </svg>
-                Explore Visily <span className="ml-2 text-xs text-red-500 bg-red-100 rounded px-1">NEW</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="flex items-center p-4 text-gray-700 hover:bg-gray-100 hover:text-purple-600">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
-                </svg>
-                Recent boards
-              </a>
-            </li>
-            <li>
-              <a href="#" className="flex items-center p-4 text-gray-700 hover:bg-gray-100 hover:text-purple-600">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
-                </svg>
-                Search projects & boards
-              </a>
-            </li>
+          <h2 className="text-center py-2 border mx-4 border-blue-600 text-blue-600 font-text font-medium rounded-full mb-2">
+            Filter by Categories
+          </h2>
+          <div className="p-5 w-[15rem] overflow-y-auto h-96 scrollbar-thumb-rounded-full scrollbar-thin">
+            {categories?.map((c, index) => (
+              <div key={index} className="mb-2">
+                <div className="flex items-center mr-4 my-5">
+                  <input
+                    type="checkbox"
+                    id={`checkbox-${index}`}
+                    className="checkbox checkbox-info h-4 w-4"
+                  />
+                  <label
+                    htmlFor={`checkbox-${index}`}
+                    className="ml-2 text-zinc-700"
+                  >
+                    {c.name}
+                  </label>
+                </div>
+              </div>
+            ))}
+          </div>
+         
           </ul>
-          <div className="mt-6">
-            <h3 className="px-4 text-sm font-semibold text-gray-500">Team space</h3>
-            <ul>
-              <li>
-                <a href="#" className="flex items-center p-4 text-gray-700 hover:bg-gray-100 hover:text-purple-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h3m0 0h3m-3-3v6m0 0v6m-9 0h18" />
-                  </svg>
-                  Welcome to Visily
-                </a>
-              </li>
-              <li>
-                <a href="#" className="flex items-center p-4 text-gray-700 hover:bg-gray-100 hover:text-purple-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h3m0 0h3m-3-3v6m0 0v6m-9 0h18" />
-                  </svg>
-                  Getting Started
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="mt-6">
-            <h3 className="px-4 text-sm font-semibold text-gray-500">Shared with me</h3>
-          </div>
-          <div className="mt-6">
-            <h3 className="px-4 text-sm font-semibold text-gray-500">Personal space</h3>
-          </div>
+    
         </nav>
       </div>
+      <button
+        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-white rounded-full shadow-md"
+        onClick={toggleSidebar}
+      >
+        {isSidebarOpen ? (
+          <FiArrowLeft className="h-6 w-6 text-gray-700" />
+        ) : (
+          <FiArrowRight className="h-6 w-6 text-gray-700" />
+        )}
+      </button>
     </div>
   );
-}
+};
 
 export default SidebarFilter;
